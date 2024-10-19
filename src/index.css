@@ -308,6 +308,13 @@ article p {
 }
 
 
+.card{
+  background-color: var(--clr-bg);
+}
+.card *{
+  color: var(--clr-text);
+}
+
 .holiday-info {
   background-color: var(--soft-dark);
   padding: 1rem;
@@ -536,9 +543,13 @@ nav a{
   color: var(--clr-text);
   }
 
-  .nav-link {
+  .nav-link-navbar {
     color: var(--clr-text);
+    
+    
   }
+
+  .nav-number { font-size: 0.7rem; }
 *{
   color: var(--clr-text);
 }

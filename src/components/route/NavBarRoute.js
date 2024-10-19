@@ -1,10 +1,13 @@
 import React, { useEffect } from 'react';
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
 
-import NavBar from '../NavBar';
+import NavBar from '../NavBarComponents/NavBar';
 import Shop from './screen/Shop';
 import Cart from './screen/Cart';
 import { SocialBar } from '../utilitis/link';
+import Footer from '../Footer';
+import WishListComponent from './screen/WishListComponent';
+import ErrorPage from './screen/ErrorPage';
 
 const NavBarRoute = () => {
 
@@ -12,17 +15,21 @@ const NavBarRoute = () => {
     <BrowserRouter>
       {/* Navbar */}
      <NavBar/>
+
+     
    
 
       {/* Routes */}
       <Routes>
         <Route path='/' element={<Shop/>} />
         <Route path='/cart' element={<Cart />} />
+        <Route path='/wishlist' element={<WishListComponent/>} />
+        <Route path='/*' element={<ErrorPage/>} />
       </Routes>
 
-      <div className="social-links d-flex flex-row flex-md-row  d-flex justify-content-center align-items-center mx-auto ">
-                        <SocialBar />
-                    </div>
+      <Footer/>
+
+      
     </BrowserRouter>
 
     

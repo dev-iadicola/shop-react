@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react'
-import useFetch from './useFetch';
 
 
 const getValueFromLocalStorage = () =>{
@@ -9,6 +8,8 @@ const getValueFromLocalStorage = () =>{
       return 'light-mode';
     }
   }
+
+  
 const ChangeTheme = () => {
     
     const [theme, setTheme] = useState(getValueFromLocalStorage());
@@ -35,7 +36,7 @@ const ChangeTheme = () => {
 
     
 
-    <button className="btn my-5  mx-5" style={{width:'100px'}} onClick={chagneTheme}>
+    <button className="btn my-5  mx-auto" style={{width:'100px'}} onClick={chagneTheme}>
     Change
   </button>
 )

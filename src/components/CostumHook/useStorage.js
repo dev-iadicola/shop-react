@@ -28,6 +28,14 @@ const useStorage = (key) => {
 
   }
 
+  const getItems = (item)=>{
+    const products = item;
+    if(products !== null){
+      return {success:false}
+    }
+    return 
+  }
+
   //Rimozione prodotto
 
   const removeItem = (itemTitle)=>{

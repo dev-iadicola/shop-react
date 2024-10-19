@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react'
 import { FaBars } from 'react-icons/fa'
-import logo from '../favicon.png'
-import { links, SocialBar } from './utilitis/link'
+import logo from '../../favicon.png'
+import { links, SocialBar } from '../utilitis/link'
 import ChangeTheme from './ChangeTheme'
 
 const NavBar = () => {
@@ -20,13 +20,13 @@ const NavBar = () => {
 
 
     useEffect(() => {
-        console.log(linkListRef)
+        //console.log(linkListRef)
 
         if (show && linkListRef.current) {
             const linkHeight = linkListRef.current.getBoundingClientRect().height;
             if (linkContainerRef.current) {
                 linkContainerRef.current.style.height = `${linkHeight}px`;
-                console.log(linkHeight)
+               // console.log(linkHeight)
             }
         } else if (linkContainerRef.current) {
             linkContainerRef.current.style.height = '0px';
@@ -37,19 +37,19 @@ const NavBar = () => {
 
 
     return (
-        <nav className="nav navbar navbar-expand-lg ">
-            <header className="nav-header container-lg ">
-                <div className="nav-brand navbar-brand d-flex align-items-center  flex-wrap">
+        <nav className="nav navbar navbar-expand-xl w-100 ">
+            <header className="nav-header container-xl ">
+                <div className="nav-brand navbar-brand d-flex align-items-center  flex-wrap text-center">
                     <div className='nav-img-div'>
-                    <img src={logo} alt="logo" className="nav-logo" />
+                        <img src={logo} alt="logo" className="nav-logo" />
                     </div>
-                    <h2 className=" nav nav-title">Tech CraftCode</h2>
+                    <h2 className=" nav nav-title ">Tech CraftCode</h2>
                     <button
                         className=" nav-toggler navbar-toggler nav-btn-icon"
                         type="button"
                         onClick={() => setShow(!show)}
                     >
-                        <FaBars className="nav-icon " />
+                        <FaBars className="nav-icon  " />
                     </button>
                 </div>
 
@@ -64,17 +64,19 @@ const NavBar = () => {
 
 
                     {show && (
-                        <ul className="nav-links navbar-nav d-flex  " ref={linkListRef}>
+                        <ul className="nav-links navbar-nav d-flex  text-center " ref={linkListRef}>
                             {links.map((el) => (
                                 <li className="" key={el.id}>
                                     <a
-                                        className="nav-link "
+                                        className="nav-link-navbar "
                                         href={el.url}
                                         target={el.target}
                                         rel="noreferrer"
                                         alt={el.text}
                                     >
                                         {el.text}
+                                        {el.icon}
+                                       {el.number}
                                     </a>
                                 </li>
                             ))}

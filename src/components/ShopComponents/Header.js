@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import useFetch from "./useFetch";
+import useFetch from "../useFetch";
 import Carusel from "./Carusel";
 
 const titleStyle = {

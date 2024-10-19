@@ -1,7 +1,8 @@
 import { ProductsAPI } from '../../../data/apiProducts'
 import useFetch from '../../useFetch';
-import Article from '../../Article';
-import Header from '../../Header';
+
+import Header from '../../ShopComponents/Header';
+import Article from '../../ShopComponents/Article';
 
 
 
