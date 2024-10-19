@@ -22,11 +22,11 @@ const AppProvider = ({children})=>{
 
     
    //DataFetching
-   useEffect(()=>{
+   /* useEffect(()=>{
     (async()=>{
         
     })
-   },[])
+   },[]) */
     return <AppContext.Provider value={{ 
         ...state,
        }}>
