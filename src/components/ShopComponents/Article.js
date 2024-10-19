@@ -64,14 +64,17 @@ const Article = ({ title, price, description, category, image }) => {
 
   return (
 
-    <article className="article d-flex flex-column flex-md-clomun justify-content-center align-items-center">
-      <img
+    <article className="article d-flex flex-column 
+    flex-md-clomun justify-content-center p-0 m-0 ">
+     <div className="bg-light w-100">
+     <img
           src={image}
           alt={title}
           className="img-fluid img-card-top  object-fit-content"
           style={{ maxHeight: '300px' }}
         />
-      <div className="article-content text-center text-md-start" style={{ width: '50' }}>
+     </div>
+      <div className="article-content text-center text-md-start p-1" style={{ width: '50' }}>
         <h5 className="">{title}</h5>
         
         <small className="text-secondary float-start pe-5">Category: {category}</small>
