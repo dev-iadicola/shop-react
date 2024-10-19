@@ -5,8 +5,10 @@ const Carusel = ({ id, title, price, description, category, image, next, prev}) 
             <h2>All Products</h2>
              
                   <div className="d-flex flex-columns mx-auto justify-content-center
-                   py-5 holiday-container ">
-                  <img src={image} alt={title} className="object-fit-lg-contain object-fit-md-contain border rounded img " height={300} />
+                   py-5 holiday-container  w-100 " style={{background:'white'}}>
+                   
+                    <img src={image} alt={title} className="object-fit-lg-contain object-fit-md-contain    " width={300} height={300} />
+
                   
   
                   </div>

@@ -66,7 +66,7 @@ const Article = ({ title, price, description, category, image }) => {
 
     <article className="article d-flex flex-column 
     flex-md-clomun justify-content-center p-0 m-0 ">
-     <div className="bg-light w-100">
+     <div className=" w-100" style={{background:'white'}}>
      <img
           src={image}
           alt={title}
