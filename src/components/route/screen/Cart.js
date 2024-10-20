@@ -1,7 +1,7 @@
 import React from 'react'
-import CartList from '../../CartComponents/CartList'
 import TotalCart from '../../CartComponents/TotalCart'
 import useStorage from '../../CostumHook/useStorage'
+import CartItem from '../../CartComponents/CartItem'
 
 
 const Cart = () => {
@@ -15,7 +15,7 @@ const Cart = () => {
 
       <TotalCart />
       {items.map((el) => {
-        return <CartList key={el.id} {...el} />
+        return <CartItem key={el.id} {...el} />
       })
 
       }

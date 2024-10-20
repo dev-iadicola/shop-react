@@ -2,7 +2,9 @@ import React, { useContext , useReducer, useEffect} from 'react'
 import { ProductsAPI } from '../../data/apiProducts'
 import { redirect } from 'react-router-dom'
 import reducer from './reducer'
-import {logProva} from './actions'
+import {DATA_FETCHING_FAIL, DATA_FETCHING_STARTED, DATA_FETCHING_SUCCESS, DATA_STORAGE_STARTED, logProva} from './actions'
+import useStorage from '../CostumHook/useStorage'
+import axios from 'axios'
 
 const url = ProductsAPI
 
@@ -21,12 +23,25 @@ const AppProvider = ({children})=>{
     const [state, dispatch] = useReducer(reducer, initialState)
 
     
-   //DataFetching
-   /* useEffect(()=>{
+   //DATA FETCHING AUTOMATICO
+   useEffect(()=>{
+    // IIFE
     (async()=>{
-        
-    })
-   },[]) */
+        dispatch({type: DATA_FETCHING_STARTED})
+        // console.log('start')
+        try{
+            //success
+            const response = await axios.get(url);
+            dispatch({type: DATA_FETCHING_SUCCESS, payload:response.data})
+            // console.log(response.data)
+
+        }catch(e){
+            dispatch({type: DATA_FETCHING_FAIL, payload:e});
+            // console.log(e)
+        }
+    })();
+   },[])
+
     return <AppContext.Provider value={{ 
         ...state,
        }}>
